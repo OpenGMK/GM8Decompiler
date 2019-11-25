@@ -51,6 +51,8 @@ deploy:
   artifact: /.*\.zip/
   auth_token:
     secure: DeS11bCUU7Gy13RMLZXMEfiZSoDr4qldgGTX08cVEntgjQjIrMUYGnuHCMaGQtyG
+  
+  # deploy on tags
   on:
     RUST_VERSION: stable
     appveyor_repo_tag: true
