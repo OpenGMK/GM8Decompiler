@@ -1,8 +1,0 @@
-/target
-**/*.rs.bk
-**/*.exe
-**/*.gmk
-**/*.gm81
-
-/.idea
-/.vscode
