@@ -1,0 +1,10 @@
+#+title: GM8Decompiler
+
+An open-source decompiler for GameMaker 8.x executables. Reverts any game back to .gmk or .gm81 format respectively.
+
+* How it works
+GameMaker 8 executables contain two sections: the regular part which is virtualised by Windows, called the "runner", and a phase file containing all the game's assets, called the "gamedata". The gamedata contains all of the assets (sprites, rooms, GML code, etc.) which were exported from the GMK file when the game was built. When the game runs, it reads its gamedata section from disk and uses it to start the game. Since all the assets can be read from the gamedata by anyone who has the file, it is possible to revert it to its original project file. That's what this tool does.
+* Background
+Originally, we created a fork of [[https://github.com/WastedMeerkat/gm81decompiler][Zach Reedy's gm81decompiler]], which, while an excellent resource, was very messy and had several deep-seated bugs. For that reason and a few others, we eventually decided to create this project from scratch in Rust. This loader has been measured to be **over ten times faster** than the old one. It's also safer, more thorough, and supports more games. The development of that loader was originally in this repository, but was later merged with the [[https://github.com/OpenGMK/OpenGMK][OpenGMK]] project which is a more broad reimplementation of GameMaker 8 infrastructure.
+* Source Code
+Development of the decompiler now takes place in the [[https://github.com/OpenGMK/OpenGMK][OpenGMK]] project repository. [[https://github.com/OpenGMK/GM8Decompiler/releases][Releases]] are still made available in this repository.
